@@ -1,5 +1,52 @@
 # Hash LM
 
+
+---
+
+## Step by Step description
+
+### 1. Setting the password in uppercase
+
+
+
+### 2. Padding the password with null-bytes to a length 14 bytes
+
+
+
+### 3. Splitting the encoded padded password
+
+We then split the encoded padded password in 3 blocks of 7 bytes:
+
+
+
+### 4. DES encrypt the LM secret using the first block as key to get CT1
+
+
+
+### 5. DES encrypt the LM secret using the second block as key to get CT2
+
+
+
+### 6. Concat CT1 and CT2 to form the final hash
+
+Finally we concat the ciphertexts of steps 4 and 5 together to form the LM hash:
+
+
+
+## Example
+
+Using the attached [lm-hash-from-password.py](./lm-hash-from-password.py) python script, we can see the step by step values for computing the LM hash:
+
+```
+$ ./lm-hash-from-password.py -p 'Podalirius!'
+[+] Raw password (utf-16-le): b'Podalirius!'
+[+] Upper raw password: b'PODALIRIUS!\x00\x00\x00'
+[+] Message part 1: 504f44414c4952 | b'PODALIR'
+  | CT1 = d81491a2cc09ff01
+[+] Message part 2: 49555321000000 | b'IUS!\x00\x00\x00'
+  | CT2 = ea2ad910bb3f2a2a
+[+] Raw LM hash: b'\xd8\x14\x91\xa2\xcc\t\xff\x01\xea*\xd9\x10\xbb?**'
+[+] LM hash: d81491a2cc09ff01ea2ad910bb3f2a2a
+```
+
 ## References
- 
- - e

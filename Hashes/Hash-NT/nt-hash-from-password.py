@@ -31,8 +31,7 @@ if __name__ == '__main__':
     if data is not None:
         print("[+] Raw password (utf-16-le): %s" % data)
         ctx = hashlib.new('md4', data)
-        nt_hash_value = ctx.hexdigest()
-        raw_keys = ctx.digest() + (b'\x00')*(3*7 - len(ctx.digest()))
-        print("[+] NT hash: %s" % nt_hash_value)
+        print("[+] Raw NT hash: %s" % ctx.digest())
+        print("[+] NT hash: %s" % ctx.hexdigest())
     else:
         pass

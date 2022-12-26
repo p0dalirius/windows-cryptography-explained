@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# File name          : nt-hash-from-password.py
+# File name          : lm-hash-from-password.py
 # Author             : Podalirius (@podalirius_)
 # Date created       : 17 Dec 2022
 
 import argparse
 import binascii
+# python3 -m pip install pycryptodome
 from Crypto.Cipher import DES
 from Crypto.Util.number import bytes_to_long, long_to_bytes
 
@@ -54,7 +55,7 @@ if __name__ == '__main__':
         data = bytes(binascii.unhexlify(options.hex_password), 'utf-8')
 
     if data is not None:
-        print("[+] Raw password (utf-16-le): %s" % data)
+        print("[+] Raw password: %s" % data)
         data = data.upper()
         data = data + (14 - len(data))*b'\x00'
         print("[+] Upper raw password: %s" % data)
