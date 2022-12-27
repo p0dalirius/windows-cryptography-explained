@@ -9,33 +9,35 @@
 
 The first step to create the LM hash is to set the password in uppercase:
 
-![](./imgs/)
+![](./imgs/01.png)
 
 ### 2. Padding the password with null-bytes to a length 14 bytes
 
 If the password is shorter than 14 bytes, we need to add padding null-bytes until it reaches a length of 14 bytes. If it is longer than 14 bytes, we just keep the first 14 bytes.
 
-![](./imgs/)
+![](./imgs/02.png)
 
 ### 3. Splitting the encoded padded password
 
 We then split the encoded padded password in 3 blocks of 7 bytes:
 
+![](./imgs/03.png)
 
+### 4. Add a parity bit after each block of 7 bits
 
-### 4. DES encrypt the LM secret using the first block as key to get CT1
+![](./imgs/04.png)
 
+### 4. DES encrypt the LM secret using K1 and K2
 
-
-### 5. DES encrypt the LM secret using the second block as key to get CT2
-
-
+![](./imgs/05.png)
 
 ### 6. Concat CT1 and CT2 to form the final hash
 
 Finally we concat the ciphertexts of steps 4 and 5 together to form the LM hash:
 
+![](./imgs/06.png)
 
+---
 
 ## Example
 
