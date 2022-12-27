@@ -60,15 +60,19 @@ if __name__ == '__main__':
         data = data + (14 - len(data))*b'\x00'
         print("[+] Upper raw password: %s" % data)
 
-        m_part_1 = data[0:7]
-        print("[+] Message part 1: %s | %s" % (binascii.hexlify(m_part_1).decode('utf-8'), m_part_1))
-        des_ctx = DES.new(partity_adjust(m_part_1), DES.MODE_ECB)
+        k1 = data[0:7]
+        print("[+] Message part 1: %s | %s" % (binascii.hexlify(k1).decode('utf-8'), k1))
+        k1 = partity_adjust(k1)
+        print("  | parity_adjust(K1) = %s" % binascii.hexlify(k1).decode('utf-8'))
+        des_ctx = DES.new(k1, DES.MODE_ECB)
         CT1 = des_ctx.encrypt(lm_secret)
         print("  | CT1 = %s" % binascii.hexlify(CT1).decode('utf-8'))
 
-        m_part_2 = data[7:14]
-        print("[+] Message part 2: %s | %s" % (binascii.hexlify(m_part_2).decode('utf-8'), m_part_2))
-        des_ctx = DES.new(partity_adjust(m_part_2), DES.MODE_ECB)
+        k2 = data[7:14]
+        print("[+] Message part 2: %s | %s" % (binascii.hexlify(k2).decode('utf-8'), k2))
+        k2 = partity_adjust(k2)
+        print("  | parity_adjust(K2) = %s" % binascii.hexlify(k2).decode('utf-8'))
+        des_ctx = DES.new(k2, DES.MODE_ECB)
         CT2 = des_ctx.encrypt(lm_secret)
         print("  | CT2 = %s" % binascii.hexlify(CT2).decode('utf-8'))
 

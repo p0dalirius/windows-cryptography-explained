@@ -41,3 +41,4 @@ activate = 1
 Source: https://stackoverflow.com/a/72807264
 
 ## References
+ - https://blog.gentilkiwi.com/securite/mscache-v2-dcc2-iteration
