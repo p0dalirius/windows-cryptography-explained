@@ -1,4 +1,4 @@
-# Hash LM
+# Lan Man (LM)
 
 
 ---
