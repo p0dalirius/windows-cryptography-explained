@@ -11,8 +11,10 @@
 
 ## Hashes
 
- - [Hash-LM](./Hashes/Hash-LM)
- - [Hash-NT](./Hashes/Hash-NT)
+ - [Lan Man (LM)](./Hashes/Lan%20Man%20%28LM%29)
+ - [New Technology Lan Man (NT)](./Hashes/New%20Technology%20Lan%20Man%20%28NT%29)
+ - [Domain Cached Credentials (DCC)](./Hashes/Domain%20Cached%20Credentials%20%28DCC%29)
+ - [Domain Cached Credentials v2 (DCC2)](./Hashes/Domain%20Cached%20Credentials%20v2%20%28DCC2%29)
 
 ## Protocols
 
