@@ -1,4 +1,6 @@
-# windows-cryptography
+![](./.github/banner.png)
+
+---
 
 <p align="center">
   Detailed explanation of Windows cryptographic algorithms, with examples and schemes.
