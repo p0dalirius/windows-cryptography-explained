@@ -10,6 +10,9 @@
   <br>
 </p>
 
+## Description
+
+This project provides a detailed explanation of Windows cryptographic algorithms, with examples and schemes. It covers various aspects of Windows cryptography, including hash functions, protocols, and storage methods. The goal is to provide a comprehensive understanding of Windows cryptographic mechanisms and their security implications.
 
 ## Hashes
 

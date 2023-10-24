@@ -1,9 +1,14 @@
 # Hash NT
 
+The Hash NT is a password hashing algorithm used in Microsoft Windows operating systems. It is a cryptographic hash function that takes a user's password as input and produces a fixed-size hash value as output. The Hash NT is based on the MD4 algorithm and is used to store and verify user passwords ""securely"".
+
+The Hash NT is widely used in Windows [authentication protocols](../../Protocols/), such as [NTLMv1](../../Protocols/NTLMv1/) and [NTLMv2](../../Protocols/NTLMv2/). It is used to generate the NT hash, which is a one-way transformation of the user's password. The NT hash is then used for various purposes, including password authentication and password cracking.
+
+Unlike the [Lan Man (LM)](../Lan%20Man%20(LM)/) hash, which is considered weak and vulnerable, the Hash NT is more secure and can handle passwords of any length. It is not limited to 14 characters like the LM hash. However, it is still susceptible to brute-force and dictionary attacks if weak passwords are used.
 
 ---
 
-## Step by Step description
+## Step by Step computation
 
 ### 1. Encode password in UTF-16-LE
 

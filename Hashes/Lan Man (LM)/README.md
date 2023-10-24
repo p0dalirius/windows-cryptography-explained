@@ -1,9 +1,14 @@
 # Lan Man (LM)
 
+The Lan Man (LM) hash is a password hashing algorithm used in older versions of Microsoft Windows operating systems. It was created in the early 1980s as a way to store user passwords securely. However, the LM hash is considered to be weak and vulnerable to various attacks due to its limitations and vulnerabilities.
+
+The LM hash operates by converting the user's password to uppercase and padding it with null bytes to a length of 14 bytes. The padded password is then split into three blocks of 7 bytes each. Parity bits are added to each block, and each block is encrypted using two separate DES keys, known as K1 and K2. The resulting ciphertexts are concatenated to form the final LM hash.
+
+Despite its historical significance, the LM hash is no longer recommended for use due to its vulnerability to pre-computed hash attacks and its inability to handle passwords longer than 14 characters. Modern Windows operating systems have transitioned to more secure password hashing algorithms, such as NTLM and NTLMv2.
 
 ---
 
-## Step by Step description
+## Step by Step computation
 
 ### 1. Setting the password in uppercase
 
