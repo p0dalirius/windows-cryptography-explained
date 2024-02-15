@@ -1,12 +1,17 @@
-# NTLMv1
+# NTLMv1 Authentication Protocol
 
+NTLMv1 (NT LAN Manager version 1) is an authentication protocol used in Windows environments to authenticate users and provide secure access to resources. It involves computing the NT hash of the user's password and using it to generate an NTLMv1 hash for authentication.
+
+NTLMv1 hash is computed by performing DES encryption on three blocks of data derived from the NT hash and server challenge. The resulting hash is used for authentication purposes.
+
+> [!IMPORTANT]
+> NTLMv1 is considered to be a weak authentication protocol due to vulnerabilities such as pass-the-hash attacks and lack of mutual authentication.
 
 ---
 
 ## Step by Step description
 
 ### 1. Compute the NT hash of the password
-
 
 
 ## Example

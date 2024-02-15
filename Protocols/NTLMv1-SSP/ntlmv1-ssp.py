@@ -12,7 +12,6 @@ from Crypto.Cipher import DES
 from Crypto.Util.number import bytes_to_long, long_to_bytes
 import sys
 
-# Administrator::COERCE:5977A887FCBCB3C4CB9D3F6EAD171BA36D6C077F87B97B2E:5977A887FCBCB3C4CB9D3F6EAD171BA36D6C077F87B97B2E:1122334455667788
 
 def partity_adjust(key):
     def parity_bit(n):

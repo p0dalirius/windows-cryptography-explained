@@ -16,14 +16,18 @@ This project provides a detailed explanation of Windows cryptographic algorithms
 
 ## Hashes
 
- - [Lan Man (LM)](./Hashes/Lan%20Man%20%28LM%29)
- - [New Technology Lan Man (NT)](./Hashes/New%20Technology%20Lan%20Man%20%28NT%29)
- - [Domain Cached Credentials (DCC)](./Hashes/Domain%20Cached%20Credentials%20%28DCC%29)
- - [Domain Cached Credentials v2 (DCC2)](./Hashes/Domain%20Cached%20Credentials%20v2%20%28DCC2%29)
+- [Lan Man (LM)](./Hashes/Lan%20Man%20%28LM%29)
+- [New Technology Lan Man (NT)](./Hashes/New%20Technology%20Lan%20Man%20%28NT%29)
+- [Domain Cached Credentials (DCC)](./Hashes/Domain%20Cached%20Credentials%20%28DCC%29)
+- [Domain Cached Credentials v2 (DCC2)](./Hashes/Domain%20Cached%20Credentials%20v2%20%28DCC2%29)
 
 ## Protocols
 
- - [NTLMv1](./Protocols/NTLMv1)
- - [NTLMv1-SSP](./Protocols/NTLMv1-SSP)
- - [NTLMv2](./Protocols/NTLMv2)
- - [NTLMv2-SSP](./Protocols/NTLMv2-SSP)
+- [NTLMv1](./Protocols/NTLMv1)
+- [NTLMv1-SSP](./Protocols/NTLMv1-SSP)
+- [NTLMv2](./Protocols/NTLMv2)
+- [NTLMv2-SSP](./Protocols/NTLMv2-SSP)
+
+## Storage Methods
+
+- [Group-Policy-Preferences-Passwords](./Storage-Methods/Group-Policy-Preferences-Passwords/)
