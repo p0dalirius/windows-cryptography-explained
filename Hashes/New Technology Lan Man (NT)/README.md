@@ -8,6 +8,22 @@ Unlike the [Lan Man (LM)](../Lan%20Man%20(LM)/) hash, which is considered weak a
 
 ---
 
+## Definition
+
+Source: [https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5?wt.mc_id=SEC-MVP-5005286)
+
+```python
+Define NTOWFv1(Passwd, User, UserDom) as
+ MD4(
+  UNICODE(Passwd)
+ )
+EndDefine
+```
+
+The `UNICODE` function here is refering to a `UTF-16-LE` (Little Endian) encoding.
+
+---
+
 ## Step by Step computation
 
 ### 1. Encode password in UTF-16-LE
