@@ -8,6 +8,27 @@ Despite its historical significance, the LM hash is no longer recommended for us
 
 ---
 
+## Definition
+
+Source: [https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5?wt.mc_id=SEC-MVP-5005286)
+
+```python
+Define LMOWFv1(Passwd, User, UserDom) as
+  ConcatenationOf(
+    DES(
+      UpperCase(Passwd)[0..6],
+      "KGS!@#$%"
+    ),
+    DES(
+      UpperCase(Passwd)[7..13],
+      "KGS!@#$%"
+    )
+  )
+EndDefine
+```
+
+---
+
 ## Step by Step computation
 
 ### 1. Setting the password in uppercase
