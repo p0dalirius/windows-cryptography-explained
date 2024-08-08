@@ -10,6 +10,21 @@ To mitigate the security risk associated with Group Policy Preferences Passwords
 
 ---
 
+## Definition
+
+Source: [https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?wt.mc_id=SEC-MVP-5005286)
+
+> All passwords are encrypted using a derived Advanced Encryption Standard (AES) key.<3>
+> 
+> The 32-byte AES key is as follows:
+> 
+> ```
+>  4e 99 06 e8  fc b6 6c c9  fa f4 93 10  62 0f fe e8
+>  f4 96 e8 06  cc 05 79 90  20 9b 09 a4  33 b6 6c 1b
+> ```
+
+---
+
 ## Step by Step computation
 
 ### 1. Compute the NT hash of the password
