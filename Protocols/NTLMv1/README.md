@@ -9,6 +9,62 @@ NTLMv1 hash is computed by performing DES encryption on three blocks of data der
 
 ---
 
+## Definition
+
+Source: [https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5?wt.mc_id=SEC-MVP-5005286)
+
+```python
+# Function to compute the NT One Way Function 
+Define NTOWFv1(Passwd, User, UserDom) as
+ MD4(UNICODE(Passwd))
+EndDefine
+
+# Function to compute the LanMan One Way Function 
+Define LMOWFv1(Passwd, User, UserDom) as
+  ConcatenationOf(
+    DES(UpperCase(Passwd)[0..6], "KGS!@#$%"),
+    DES(UpperCase(Passwd)[7..13], "KGS!@#$%")
+  )
+EndDefine
+
+Set ResponseKeyNT to NTOWFv1(Passwd, User, UserDom)
+Set ResponseKeyLM to LMOWFv1(Passwd, User, UserDom)
+
+# Function to compute the NTLMv1 challenge
+Define ComputeResponse(NegFlg, ResponseKeyNT, ResponseKeyLM, CHALLENGE_MESSAGE.ServerChallenge, ClientChallenge, Time, ServerName) as
+  If (User is set to "" AND Passwd is set to "")
+    # Special case for anonymous authentication
+    Set NtChallengeResponseLen to 0
+    Set NtChallengeResponseMaxLen to 0
+    Set NtChallengeResponseBufferOffset to 0
+    Set LmChallengeResponse to Z(1)
+  ElseIf
+    If (NTLMSSP_NEGOTIATE_EXTENDED_SESSIONSECURITY flag is set in NegFlg) 
+       Set NtChallengeResponse to
+        DESL(
+          ResponseKeyNT,
+          MD5(ConcatenationOf(CHALLENGE_MESSAGE.ServerChallenge, ClientChallenge))[0..7]
+        )
+       Set LmChallengeResponse to ConcatenationOf{ClientChallenge, Z(16)}
+    Else 
+       Set NtChallengeResponse to DESL(ResponseKeyNT, CHALLENGE_MESSAGE.ServerChallenge)
+       If (NoLMResponseNTLMv1 is TRUE)
+           Set LmChallengeResponse to NtChallengeResponse
+       Else 
+           Set LmChallengeResponse to DESL(ResponseKeyLM, CHALLENGE_MESSAGE.ServerChallenge)
+       EndIf
+    EndIf
+EndIf
+
+Set SessionBaseKey to MD4(NTOWF)
+```
+
+The `UNICODE` function here is refering to a `UTF-16-LE` (Little Endian) encoding.
+
+---
+
+---
+
 ## Step by Step description
 
 ### 1. Compute the NT hash of the password
