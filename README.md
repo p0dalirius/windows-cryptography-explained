@@ -29,8 +29,8 @@ This project provides a detailed explanation of Windows cryptographic algorithms
   - [NTLMv2](./Protocols/NTLM/NTLMv2)
   - [NTLMv2-SSP](./Protocols/NTLM/NTLMv2-SSP)
 - [Kerberos](./Protocols/Kerberos)
-  - [AES 128 KDF](./Protocols/Kerberos/AES-128-KDF)
-  - [AES 256 KDF](./Protocols/Kerberos/AES-256-KDF)
+  - [aes128-cts-hmac-sha1-96](./Protocols/Kerberos/aes128-cts-hmac-sha1-96)
+  - [aes256-cts-hmac-sha1-96](./Protocols/Kerberos/aes256-cts-hmac-sha1-96)
 
 ## Storage Methods
 
