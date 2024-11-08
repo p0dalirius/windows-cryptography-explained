@@ -23,10 +23,14 @@ This project provides a detailed explanation of Windows cryptographic algorithms
 
 ## Protocols
 
-- [NTLMv1](./Protocols/NTLMv1)
-- [NTLMv1-SSP](./Protocols/NTLMv1-SSP)
-- [NTLMv2](./Protocols/NTLMv2)
-- [NTLMv2-SSP](./Protocols/NTLMv2-SSP)
+- [NTLM](./Protocols/NTLM)
+  - [NTLMv1](./Protocols/NTLM/NTLMv1)
+  - [NTLMv1-SSP](./Protocols/NTLM/NTLMv1-SSP)
+  - [NTLMv2](./Protocols/NTLM/NTLMv2)
+  - [NTLMv2-SSP](./Protocols/NTLM/NTLMv2-SSP)
+- [Kerberos](./Protocols/Kerberos)
+  - [AES 128 KDF](./Protocols/Kerberos/AES-128-KDF)
+  - [AES 256 KDF](./Protocols/Kerberos/AES-256-KDF)
 
 ## Storage Methods
 

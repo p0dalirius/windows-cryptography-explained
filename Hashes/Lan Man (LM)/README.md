@@ -84,4 +84,4 @@ $ ./lm-hash-from-password.py -p 'Podalirius!'
 ```
 
 ## References
- - 
+ - [https://learn.microsoft.com/en-us/windows-server/security/kerberos/passwords-technical-overview#passwords-stored-as-owf](https://learn.microsoft.com/en-us/windows-server/security/kerberos/passwords-technical-overview#passwords-stored-as-owf)

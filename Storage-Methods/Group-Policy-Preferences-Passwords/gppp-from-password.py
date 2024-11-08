@@ -4,7 +4,6 @@
 # Author             : Podalirius (@podalirius_)
 # Date created       : 17 Dec 2022
 
-import hashlib
 import argparse
 import binascii
 import base64
