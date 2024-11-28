@@ -5,7 +5,7 @@ NTLMv2 (NT LAN Manager version 2) is an authentication protocol used in Windows 
 NTLMv2 involves creating an HMAC-MD5 hash of the NT hash of the user's password, along with other elements like the server challenge, client challenge, timestamp, and other session-related data. This hash, known as the NTLMv2 response, is used for authentication.
 
 > [!IMPORTANT]
-> NTLMv2 provides better security than NTLMv1, but it is still vulnerable to certain attacks, such as pass-the-hash, and lacks mutual authentication. Use of NTLMv2 is generally recommended over NTLMv1, though more secure protocols like Kerberos are preferred.
+> NTLMv2 provides better security than NTLMv1, but it is still vulnerable to certain attacks, and lacks mutual authentication. Use of NTLMv2 is generally recommended over NTLMv1, though more secure protocols like Kerberos are preferred.
 
 ---
 

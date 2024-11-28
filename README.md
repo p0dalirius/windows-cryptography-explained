@@ -23,12 +23,13 @@ This project provides a detailed explanation of Windows cryptographic algorithms
 
 ## Protocols
 
-- [NTLM](./Protocols/NTLM)
+- [NTLM](./Protocols/NTLM/)
   - [NTLMv1](./Protocols/NTLM/NTLMv1)
   - [NTLMv1-SSP](./Protocols/NTLM/NTLMv1-SSP)
   - [NTLMv2](./Protocols/NTLM/NTLMv2)
   - [NTLMv2-SSP](./Protocols/NTLM/NTLMv2-SSP)
-- [Kerberos](./Protocols/Kerberos)
+
+- [Kerberos](./Protocols/Kerberos/)
   - [aes128-cts-hmac-sha1-96](./Protocols/Kerberos/aes128-cts-hmac-sha1-96)
   - [aes256-cts-hmac-sha1-96](./Protocols/Kerberos/aes256-cts-hmac-sha1-96)
 

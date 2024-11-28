@@ -14,19 +14,40 @@ Similar to DCC, DCC2 poses a security risk if an attacker gains physical access 
 
 
 
-### 2. Compute MD4 of the encoded password
+### 2. Compute NT hash
+
+
+
+### 3. Compute the MD4 hash of the nthash and the username
+
+
+
+### 4. Applying PBKDF2-HMAC-SHA1 with 10240 rounds to DCC1 hash
 
 
 
 ## Example
 
-Using the attached [nt-hash-from-password.py](./nt-hash-from-password.py) python script, we can see the step by step values for computing the NT hash:
+Using the attached [dcc2-hash-from-password.py](./dcc2-hash-from-password.py) python script, we can see the step by step values for computing the NT hash:
 
 ```
-$ ./nt-hash-from-password.py -p 'Podalirius!' -v
-[+] Raw password (utf-16-le): b'P\x00o\x00d\x00a\x00l\x00i\x00r\x00i\x00u\x00s\x00!\x00'
-[+] Raw NT hash: b'\x12$s\xd7Z\xd1mK(\x02cd\xf6\xc0\xa9x'
-[+] NT hash: 122473d75ad16d4b28026364f6c0a978
+$ ./dcc2-hash-from-password.py -p 'Podalirius!' -u 'Administrator' -v
+[+] Step 1: Prepare username and password
+   [+] Raw password (utf-16-le): b'P\x00o\x00d\x00a\x00l\x00i\x00r\x00i\x00u\x00s\x00!\x00'
+   [+] Raw lowercase username (utf-16-le): b'a\x00d\x00m\x00i\x00n\x00i\x00s\x00t\x00r\x00a\x00t\x00o\x00r\x00'
+
+[+] Step 2: Compute NT hash
+   [+] Raw NT hash (utf-16-le): b'\x12$s\xd7Z\xd1mK(\x02cd\xf6\xc0\xa9x'
+   [+] Hex NT hash (utf-16-le): 122473d75ad16d4b28026364f6c0a978
+
+[+] Step 3: Compute the MD4 hash of the nthash and the username
+   [+] Raw DCC1 hash: b'H2,HIJAs\x0e\x1a?rV\xd9\x198'
+   [+] Hex DCC1 hash: 48322c48494a41730e1a3f7256d91938
+
+[+] Step 4: Applying PBKDF2-HMAC-SHA1 with 10240 rounds to DCC1 hash
+   [+] Raw DCC2 hash: b'\xc0\xd0\xbbJ*\xec\xe5[\xbcp\x06\x8ct\xaeG\xf0)\xb4\xb0\x16'
+   [+] Raw DCC2 hash: c0d0bb4a2aece55bbc70068c74ae47f0
+   [+] Hashcat format: $DCC$10240#Administrator#c0d0bb4a2aece55bbc70068c74ae47f0
 ```
 
 If you get a `ValueError: unsupported hash type md4`, this means your OpenSSL installation does not support MD4. You can re-enable it simply by adding this in `/usr/lib/openssl.cnf` or in `/etc/ssl/openssl.cnf`:

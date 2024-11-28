@@ -8,8 +8,6 @@ NTLMv1 SSP is designed to address some of the vulnerabilities present in the bas
 
 ---
 
-
-
 ## References
 
 - [https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)

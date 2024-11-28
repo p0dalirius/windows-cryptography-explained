@@ -69,7 +69,6 @@ The `UNICODE` function here is refering to a `UTF-16-LE` (Little Endian) encodin
 
 ### 1. Compute the NT hash of the password
 
-
 ## Example
 
 ```

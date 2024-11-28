@@ -45,7 +45,7 @@ if __name__ == '__main__':
     print("  | domain   = %s" % domain)
     print("  | username = %s" % username)
     salt = domain.upper() + username
-    print("  | salt = %s" % salt)
+    print("  | salt     = %s" % salt)
     print()
 
     print("[+] Computing PBKDF2-HMAC from password:")
